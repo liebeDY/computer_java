@@ -1,3 +1,4 @@
+package step6;
 
 public class TestException2 {
 
