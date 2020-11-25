@@ -21,17 +21,36 @@ public class MemberMenu {
 			
 			switch (menu) {
 			
-			case 1:
+			case 1: // 추가
 				data.add(infoInput());
 				break;
 				
-			case 2:
+			case 2: // 검색
 				idx = search(data);
 				printMember(data.get(idx));
 				break;
 				
-			case 3:
+			case 3: // 수정
 				editMember(data);
+				break;
+				
+			case 4: // 삭제
+				delMember(data);
+				break;
+				
+			case 5: // 전체 출력
+				for (idx = 0; idx < data.size(); idx++) {
+					printMember(data.get(idx));
+				}
+				break;
+				
+			case 6: // 데이터 초기화 = 전체 삭제
+				data.removeAll(data);
+				break;
+				
+			case 7: // 종료
+				flag = false;
+				System.out.println("종료합니다");
 				break;
 			}
 		}
@@ -80,4 +99,9 @@ public class MemberMenu {
 		data.set(idx, new Member(data.get(idx).getName(), tel, address));
 	}
 	
+	// 삭제
+	public void delMember(ArrayList<Member> data) {
+		int idx = search(data);
+		data.remove(idx);
+	}
 }
