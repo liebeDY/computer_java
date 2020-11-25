@@ -52,6 +52,6 @@ public class SchoolService {
 			this.addPerson(p);
 		} else {
 			System.out.println("update 할 필요가 없음");
-		}
+		} 
 	}
 }
