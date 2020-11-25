@@ -1,5 +1,6 @@
 package test;
 
+import exception.DuplicateTelException;
 import service.SchoolService;
 import vo.Employee;
 import vo.Person;
@@ -12,13 +13,23 @@ public class TestSchoolService {
 		
 		SchoolService service = new SchoolService();
 		
-		service.addPerson(new Teacher("123", "ㅁㅁㅁ", "서울", "국어"));
+		try {
+			service.addPerson(new Teacher("123", "ㅁㅁㅁ", "서울", "국어"));
+			System.out.println("add ok");
+		} catch (DuplicateTelException de) {
+			System.out.println(de.getMessage());
+		}
 		
-		Student s = new Student("234", "asdf", "안양", "S123");
-		service.addPerson(s);
+		try {
+			Student s = new Student("234", "asdf", "안양", "S123");
+			service.addPerson(s);
+			System.out.println("add ok");
+		} catch (DuplicateTelException de ) {
+			System.out.println(de.getMessage());
+		}
 		
-		Employee e = new Employee("346", "oqweiu", "구리", "전산");
-		service.addPerson(e);
+//		Employee e = new Employee("346", "oqweiu", "구리", "전산");
+//		service.addPerson(e);
 		
 		service.printAll();
 		

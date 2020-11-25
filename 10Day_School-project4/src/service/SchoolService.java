@@ -2,6 +2,7 @@ package service;
 
 import java.util.ArrayList;
 
+import exception.DuplicateTelException;
 import vo.Person;
 
 public class SchoolService {
@@ -9,21 +10,16 @@ public class SchoolService {
 	private ArrayList<Person> list = new ArrayList<Person>();
 	
 	// addPerson
-	public void addPerson(Person p) {
-		boolean flag = false;
+	public void addPerson(Person p) throws DuplicateTelException {
+		// Exception 처리
 		for (int i = 0; i < list.size(); i++) {
 			Person per = list.get(i);
 			if (p.equals(per.getTel())) {
-				flag = true;
-				break;
+				throw new DuplicateTelException("동일한 번호가 존재하여 추가할 수 없습니다.");
 			}
 		}
-		if (flag == false) {
-			list.add(p);
-		} else {
-			System.out.println("이미 등록된 번호 입니다.");
-		}
-
+	
+		list.add(p);
 	}
 
 	// printAll
