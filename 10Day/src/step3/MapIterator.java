@@ -27,5 +27,13 @@ public class MapIterator {
 			value = map.get(key);
 			System.out.println(key + " : " + value);
 		}
+		
+		System.out.println("\nIterator를 value에 연결");
+		
+		Iterator<String> valueIterator = map.values().iterator();
+		
+		while (valueIterator.hasNext()) {
+			System.out.println(valueIterator.next());
+		}
 	}
 }
