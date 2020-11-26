@@ -49,7 +49,6 @@ public class TestSchoolService {
 			System.out.println(e.getMessage());
 		}
 		
-		
 		// 수정 메서드 확인
 		System.out.println("수정");
 		try {
@@ -59,7 +58,6 @@ public class TestSchoolService {
 		} catch (PersonNotFoundException e) {
 			System.out.println(e.getMessage());
 		}
-		
 	}	
 }
 
