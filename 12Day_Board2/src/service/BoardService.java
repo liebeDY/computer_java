@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import vo.Member;
@@ -29,7 +30,10 @@ public class BoardService {
 	
 	public void saveData(String fileName) throws IOException {
 		FileOutputStream fos = new FileOutputStream(fileName);
-//		ObjectOutputStream 
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		
+		oos.writeObject(list);
+		oos.close();
 	}
 	
 	public void insertBoard(Member b) {
