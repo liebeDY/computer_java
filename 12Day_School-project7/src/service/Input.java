@@ -45,8 +45,8 @@ public class Input {
 					} else {
 						System.out.println("잘못된 입력값입니다.");
 					}
-				}
 				
+				}
 				System.out.println("1.전화번호를 입력하세요");
 				tel = br.readLine();
 				System.out.println("2.이름을 입력하세요");
@@ -81,8 +81,38 @@ public class Input {
 				} catch (DuplicateTelException e) {
 					e.getMessage();
 				}
+			}// if (1) 끝, 2.삭제	
+			else if (str.equals("2")) {
+				System.out.println();
+				String tel2 = br.readLine();
 				
+				try {
+					service.deletePerson(tel2);
+				} catch (PersonNotFoundException pe) {
+					System.out.println(pe.getMessage());
+				}
+			}// else if (2) 끝, 3.검색
+			else if (str.equals("3")) {
+				System.out.println("1.전화번호를 입력하세요");
+				String tel1 = br.readLine();
+				
+				try {
+					System.out.println(service.findPerson(tel1));
+				} catch (PersonNotFoundException pe) {
+					System.out.println(pe.getMessage());
+				}
+			}// else if (3) 끝, 4.전체회원 보기
+			else if (str.equals("4")) {
+				service.printAll();
+			}// else if (4) 끝, 5.종료
+			else if (str.equals("5")) {
+				System.out.println("종료합니다");
+				break;
+			}
+			else {
+				System.out.println("입력된 값이 잘못되었습니다.");
 			}
 		}
 	}
 }
+
