@@ -60,4 +60,32 @@ public class BoardService {
 		}
 		return pro;
 	}
+	
+	public boolean updateBoard(Member m) {
+		boolean flag = false;
+		for (int i = 0; i < list.size(); i++) {
+			Member pro = (Member) list.get(i);
+			
+			if (pro.getId().equals(m.getId())) {
+				list.set(i, m);
+				
+				flag = true;
+				break;
+			}
+		}
+		return flag;
+	}
+	
+	public void deleteBoard(String id) {
+		for (int i = 0; i < list.size(); i++) {
+			Member pro1 = (Member) list.get(i);
+			if (id.equals(pro1.getId())) {
+				list.remove(i);
+			}
+		}
+	}
+	
+	public void printBoard() {
+		System.out.println(list);
+	}
 }
