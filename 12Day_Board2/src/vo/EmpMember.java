@@ -4,8 +4,9 @@ public class EmpMember extends Member {
 
 	private String dept;
 
-	public EmpMember(String id, String contents) {
+	public EmpMember(String id, String contents, String dept) {
 		super(id, contents);
+		this.dept = dept;
 	}
 
 	public String getDept() {
