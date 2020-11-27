@@ -10,7 +10,7 @@ import vo.Member;
 
 public class TestBoardService {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
 
 		String fileName = "school.obj";
 		
@@ -27,7 +27,7 @@ public class TestBoardService {
 		
 		BoardService service = new BoardService();
 		
-		// service.loadData(fileName);
+//		service.loadData(fileName);
 		
 		while (flag) {
 			
