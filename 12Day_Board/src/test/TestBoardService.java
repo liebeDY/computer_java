@@ -54,9 +54,34 @@ public class TestBoardService {
 				
 				System.out.println(m);
 				break;
+				
+			case "3" :
+				System.out.println("수정할 id를 입력하세요: ");
+				id = br.readLine();
+				System.out.println("수정할 내용을 입력하세요: ");
+				Contents = br.readLine();
+				
+				Member m2 = new Member(id, Contents);
+				service.updateBoard(m2);
+				break;
+				
+			case "4" :
+				System.out.println("삭제할 id를 입력하세요: ");
+				id = br.readLine();
+				service.deleteBoard(id);
+				break;
+				
+			case "5" :
+				service.printBoard();
+				break;
+				
+			case "6" :
+				flag = false;
+				break;
+				
+			default :
+				System.out.println("잘못입력하셨습니다");
 			}
 		}
-		
 	}
-
 }

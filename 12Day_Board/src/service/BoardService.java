@@ -72,4 +72,35 @@ public class BoardService {
 		return pro;
 	}
 	
+	// 수정 
+	public boolean updateBoard(Member b) {
+		boolean flag = false;
+		
+		for (int i = 0; i < list.size(); i++) {
+			Member pro = (Member) list.get(i);
+			
+			if (pro.getId().equals(b.getId())) {
+				list.set(i, b);
+				flag = true;
+				break;
+			}
+		}
+		return flag;
+		
+	}
+	
+	// 삭제
+	public void deleteBoard(String id) {
+		for (int i = 0; i < list.size(); i++) {
+			Member pro1 = (Member) list.get(i);
+			
+			if (id.equals(pro1.getId())) {
+				list.remove(i);
+			}
+		}
+	}
+	
+	public void printBoard() {
+		System.out.println(list);
+	}
 }
