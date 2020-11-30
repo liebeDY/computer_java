@@ -26,6 +26,11 @@ public class TestThread4 {
 
 	public static void main(String[] args) {
 
+		ServerWorker worker1 = new ServerWorker("¼ÒÁö¼·", 1000);
+		worker1.start();
+		
+		ServerWorker worker2 = new ServerWorker("Å©¸®½ºÅ»", 3000);
+		worker2.start();
+		System.out.println("main Á¾·á");
 	}
-
 }
