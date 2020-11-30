@@ -36,9 +36,6 @@ public class TestClient {
 		socket.close();
 	}
 	
-	
-	
-	
 	public static void main(String[] args) {
 
 		TestClient ts = new TestClient();
@@ -51,5 +48,4 @@ public class TestClient {
 			e.printStackTrace();
 		}
 	}
-
 }
